@@ -16,6 +16,7 @@ class UserProfile extends StatelessWidget {
     MenuRowData(Icons.date_range, 'Данные и память'),
     MenuRowData(Icons.brush, 'Оформление'),
     MenuRowData(Icons.language, 'Язык'),
+    MenuRowData(Icons.sticky_note_2, 'Стикеры'),
   ];
 
   @override
@@ -28,18 +29,20 @@ class UserProfile extends StatelessWidget {
       ),
       body: Container(
         width: double.infinity,
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.start,
-          crossAxisAlignment: CrossAxisAlignment.center,
-          children: [
-            _UserInfo(),
-            SizedBox(height: 30),
-            _MenuWidget(
-              menuRow: firstmenuRow,
-            ),
-            SizedBox(height: 30),
-            _MenuWidget(menuRow: secondmenuRow),
-          ],
+        child: SingleChildScrollView(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.start,
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              _UserInfo(),
+              SizedBox(height: 30),
+              _MenuWidget(
+                menuRow: firstmenuRow,
+              ),
+              SizedBox(height: 30),
+              _MenuWidget(menuRow: secondmenuRow),
+            ],
+          ),
         ),
       ),
     );
